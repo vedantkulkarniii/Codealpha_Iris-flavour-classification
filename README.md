@@ -64,6 +64,8 @@ iris-classification/
 ├── src/                     # Source code
 │   ├── dataset_downloader.py   # KaggleHub dataset downloader
 │   ├── data_loader.py          # Dataset loading utilities
+│   ├── data_validation.py      # Data validation and analysis
+│   ├── preprocessing.py        # Data cleaning pipeline
 │   └── setup_dataset.py        # Integrated setup pipeline
 │
 ├── models/                  # Trained models (to be added)
@@ -73,6 +75,21 @@ iris-classification/
 └── README.md              # Project documentation
 ```
 
+## Data Preprocessing
+The preprocessing pipeline includes:
+- **Missing Value Analysis**: Check for and handle missing data
+- **Duplicate Detection**: Identify and remove duplicate records (3 found)
+- **Data Type Validation**: Ensure correct data types for all columns
+- **Column Cleaning**: Remove unnecessary columns (Id column)
+- **Feature-Target Separation**: Split data into features (X) and target (y)
+- **Class Distribution**: Analyze target variable balance
+
+After preprocessing:
+- Dataset reduced from 150 to 147 samples (3 duplicates removed)
+- 4 numerical features retained
+- Perfectly balanced target classes
+
 ## Project Status
 ✅ Day 1: Project Setup & Dataset - Completed
-🚧 Day 2: Data Understanding & Cleaning - Not Started
+✅ Day 2: Data Understanding & Cleaning - Completed
+🚧 Day 3: Exploratory Data Analysis - Not Started
