@@ -66,6 +66,7 @@ iris-classification/
 │   ├── data_loader.py          # Dataset loading utilities
 │   ├── data_validation.py      # Data validation and analysis
 │   ├── preprocessing.py        # Data cleaning pipeline
+│   ├── eda.py                  # Exploratory data analysis
 │   └── setup_dataset.py        # Integrated setup pipeline
 │
 ├── models/                  # Trained models (to be added)
@@ -89,7 +90,26 @@ After preprocessing:
 - 4 numerical features retained
 - Perfectly balanced target classes
 
+## Exploratory Data Analysis (EDA)
+Comprehensive visual analysis to understand feature relationships and patterns:
+
+### Visualizations Generated
+1. **Species Distribution** - Count plot showing balanced classes
+2. **Sepal Measurements** - Scatter plot of sepal length vs width by species
+3. **Petal Measurements** - Scatter plot of petal length vs width by species
+4. **Feature Pairplot** - Complete pairwise feature relationships
+5. **Correlation Heatmap** - Feature correlation matrix
+6. **Feature Distributions** - Violin plots showing distributions by species
+
+### Key Findings
+- **Petal measurements** are excellent discriminators between species
+- **Strong correlation** (0.962) between petal length and width
+- **Setosa** is clearly separable from other species
+- **Versicolor and Virginica** have some overlap in feature space
+- All visualizations saved in `visualizations/` directory
+
 ## Project Status
 ✅ Day 1: Project Setup & Dataset - Completed
 ✅ Day 2: Data Understanding & Cleaning - Completed
-🚧 Day 3: Exploratory Data Analysis - Not Started
+✅ Day 3: Exploratory Data Analysis - Completed
+🚧 Day 4: Train/Test Split & Baseline Model - Not Started
