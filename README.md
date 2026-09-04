@@ -67,6 +67,7 @@ iris-classification/
 │   ├── data_validation.py      # Data validation and analysis
 │   ├── preprocessing.py        # Data cleaning pipeline
 │   ├── eda.py                  # Exploratory data analysis
+│   ├── train.py                # Model training pipeline
 │   └── setup_dataset.py        # Integrated setup pipeline
 │
 ├── models/                  # Trained models (to be added)
@@ -108,8 +109,30 @@ Comprehensive visual analysis to understand feature relationships and patterns:
 - **Versicolor and Virginica** have some overlap in feature space
 - All visualizations saved in `visualizations/` directory
 
+## Machine Learning Pipeline
+
+### Train/Test Split
+- **Split ratio**: 80/20 (117 train / 30 test)
+- **Stratification**: Enabled to maintain class balance
+- **Random state**: 42 for reproducibility
+- **No data leakage**: Strict separation between train and test
+
+### Feature Scaling
+- **Method**: StandardScaler (z-score normalization)
+- **Formula**: z = (x - μ) / σ
+- **Fit on training data only**, transform both train and test
+- Prevents data leakage from test set
+
+### Baseline Model: Logistic Regression
+- **Algorithm**: Logistic Regression with One-vs-Rest strategy
+- **Solver**: lbfgs (Limited-memory BFGS)
+- **Features**: 4 scaled numerical features
+- **Classes**: 3 iris species
+- **Model saved**: `models/logistic_regression.pkl` (includes scaler)
+
 ## Project Status
 ✅ Day 1: Project Setup & Dataset - Completed
 ✅ Day 2: Data Understanding & Cleaning - Completed
 ✅ Day 3: Exploratory Data Analysis - Completed
-🚧 Day 4: Train/Test Split & Baseline Model - Not Started
+✅ Day 4: Train/Test Split & Baseline Model - Completed
+🚧 Day 5: Multiple Models & Evaluation - Not Started
