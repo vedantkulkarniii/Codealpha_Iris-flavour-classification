@@ -68,6 +68,7 @@ iris-classification/
 │   ├── preprocessing.py        # Data cleaning pipeline
 │   ├── eda.py                  # Exploratory data analysis
 │   ├── train.py                # Model training pipeline
+│   ├── evaluate.py             # Model evaluation & comparison
 │   └── setup_dataset.py        # Integrated setup pipeline
 │
 ├── models/                  # Trained models (to be added)
@@ -130,9 +131,33 @@ Comprehensive visual analysis to understand feature relationships and patterns:
 - **Classes**: 3 iris species
 - **Model saved**: `models/logistic_regression.pkl` (includes scaler)
 
+## Model Evaluation & Comparison
+
+### Models Trained
+1. **Logistic Regression** (Baseline) - Linear classifier
+2. **K-Nearest Neighbors (KNN)** - Distance-based classifier (k=5)
+3. **Decision Tree** - Tree-based classifier
+4. **Random Forest** - Ensemble of 100 trees
+
+### Model Performance
+
+| Model | Accuracy | Precision | Recall | F1-Score |
+|-------|----------|-----------|--------|----------|
+| **Random Forest** | **96.67%** | **96.97%** | **96.67%** | **96.66%** |
+| Logistic Regression | 93.33% | 93.33% | 93.33% | 93.33% |
+| Decision Tree | 93.33% | 93.33% | 93.33% | 93.33% |
+| K-Nearest Neighbors | 93.33% | 94.44% | 93.33% | 93.27% |
+
+### Best Model: Random Forest 🏆
+- **Accuracy**: 96.67% (29/30 correct predictions)
+- **Only 1 misclassification** on test set
+- Confusion matrices saved for all models
+- Best model saved to `models/best_model.pkl`
+
 ## Project Status
 ✅ Day 1: Project Setup & Dataset - Completed
 ✅ Day 2: Data Understanding & Cleaning - Completed
 ✅ Day 3: Exploratory Data Analysis - Completed
 ✅ Day 4: Train/Test Split & Baseline Model - Completed
-🚧 Day 5: Multiple Models & Evaluation - Not Started
+✅ Day 5: Multiple Models & Evaluation - Completed
+🚧 Day 6: Model Comparison & Best Model Selection - Not Started
