@@ -69,6 +69,7 @@ iris-classification/
 │   ├── eda.py                  # Exploratory data analysis
 │   ├── train.py                # Model training pipeline
 │   ├── evaluate.py             # Model evaluation & comparison
+│   ├── predict.py              # Prediction system
 │   └── setup_dataset.py        # Integrated setup pipeline
 │
 ├── models/                  # Trained models (to be added)
@@ -154,10 +155,47 @@ Comprehensive visual analysis to understand feature relationships and patterns:
 - Confusion matrices saved for all models
 - Best model saved to `models/best_model.pkl`
 
+## Prediction System
+
+### Interactive Prediction
+Run predictions on new flower measurements:
+```bash
+python src/predict.py
+```
+
+### Main Application
+Menu-driven interface with options:
+```bash
+python main.py
+```
+
+**Features:**
+1. Run Complete ML Pipeline
+2. Make Predictions (Interactive)
+3. Test Example Predictions
+4. View Model Performance
+5. Exit
+
+### Example Usage
+```python
+from src.predict import predict_from_dict
+
+measurements = {
+    'SepalLengthCm': 5.1,
+    'SepalWidthCm': 3.5,
+    'PetalLengthCm': 1.4,
+    'PetalWidthCm': 0.2
+}
+
+result = predict_from_dict(measurements)
+# Result: {'predicted_species': 'Iris-setosa', 'confidence': 100.0, ...}
+```
+
 ## Project Status
 ✅ Day 1: Project Setup & Dataset - Completed
 ✅ Day 2: Data Understanding & Cleaning - Completed
 ✅ Day 3: Exploratory Data Analysis - Completed
 ✅ Day 4: Train/Test Split & Baseline Model - Completed
 ✅ Day 5: Multiple Models & Evaluation - Completed
-🚧 Day 6: Model Comparison & Best Model Selection - Not Started
+✅ Day 6: Prediction System & Integration - Completed
+🚧 Day 7-8: Final Testing & Documentation - In Progress
